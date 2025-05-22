@@ -4,3 +4,7 @@
 [submodule "rlds_dataset_builder"]
 	path = rlds_dataset_builder
 	url = git@github.com:qnoens/rlds_dataset_builder.git
+[submodule "robot-imitation-glue"]
+	path = robot-imitation-glue
+	url = git@github.com:qnoens/robot-imitation-glue.git
+	branch = generalisation-evaluation
