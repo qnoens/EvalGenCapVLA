@@ -38,12 +38,19 @@ In order to start fine-tuning we must first compute the normalisation statistics
 CUDA_VISIBLE_DEVICES=0, uv run scripts/compute_norm_stats.py --config-name pi0_fast_ur3_attach_cb_v2_joints
 ```
 Then we start the fine-tuning as follows:
+```bash
 CUDA_VISIBLE_DEVICES=0, XLA_PYTHON_CLIENT_MEM_FRACTION=0.9 uv run scripts/train.py pi0_fast_ur3_attach_cb_v2_joints --exp-name=pi-zero-fast --overwrite
+```
 
 The instructions for pi-zero are identical, replacing pi-zero-fast by pi-zero should do the trick.
 
 Deploying these models is as simple as running this command, after you changed it to the correct directory and config name of course:
+```bash
 CUDA_VISIBLE_DEVICES=0, uv run scripts/serve_policy.py policy:checkpoint --policy.config=pi0_ur3_attach_cb_v2_joints --policy.dir=checkpoints/pi0_ur3_attach_cb_v2_joints/pi-zero/9999
+```
 
 ## Robot-imitation-glue
-This submodule is used for demonstration collection on a physical robot as well as the evaluation of the policies.
+This submodule is used for demonstration collection on a physical robot as well as the evaluation of the policies. To run our experiments, go to the robot_imitation_glue folder inside the submodule. Run collect_data.py for demonstration collection. 
+
+For OpenVLA: In openvla_agent.py you must change the unnorm_key to the name of your own dataset and give the instruction you want the policy to execute. Then just run eval_openvla.py to run the policy (of course after you deployed OpenVLA in the openvla folder).
+For OpenPi: Run eval_pi0.py to run inference (after the server of the model was started), inside the code you must give the instruction that must be followed.
