@@ -1,7 +1,3 @@
-Here’s a polished and more concise version of your README, suitable for a public GitHub repository. It improves structure, clarity, and tone while keeping all technical details intact:
-
----
-
 # Evaluating the Generalisation Capabilities of Vision-Language-Action (VLA) Models
 
 This repository contains the full codebase for the thesis *“Evaluating the Generalisation Capabilities of Vision-Language-Action Models.”* It includes all scripts, tools, and configurations used in the experiments.
@@ -113,11 +109,3 @@ This folder includes utilities to support the experiments:
 * `upload_dataset.py`: Uploads a LeRobot dataset to the Hugging Face Hub.
 
 These scripts use the same environment as `robot-imitation-glue`.
-
----
-
-Feel free to open an issue if anything is unclear or broken. Contributions are welcome!
-
----
-
-Let me know if you’d like a shorter version for the GitHub preview or a LICENSE/CONTRIBUTING.md file.
