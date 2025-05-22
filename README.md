@@ -32,5 +32,18 @@ In this folder, we also provided a mujoco-sim folder. When running the scripts/d
 This folder enabled us to convert our LeRobot dataset to a RLDS dataset format in order for our dataset to be fine-tuned on OpenVLA. We refer to all the necessary instructions in this submodule itself as it is pretty clear based on that alone how everything works.
 
 ## OpenPi
-The openpi module includes all the code to fine-tune, and deploy $\pi_0$ and $\pi_0$-FAST.
+The openpi module includes all the code to fine-tune, and deploy $\pi_0$ and $\pi_0$-FAST. Similarly as for OpenVLA, you will need to change the src/openpi/training/config.py file for your own setup, ours all still included as an example and refer already to our publicly available Hugging Face repository. 
+In order to start fine-tuning we must first compute the normalisation statistics:
+```bash
+CUDA_VISIBLE_DEVICES=0, uv run scripts/compute_norm_stats.py --config-name pi0_fast_ur3_attach_cb_v2_joints
+```
+Then we start the fine-tuning as follows:
+CUDA_VISIBLE_DEVICES=0, XLA_PYTHON_CLIENT_MEM_FRACTION=0.9 uv run scripts/train.py pi0_fast_ur3_attach_cb_v2_joints --exp-name=pi-zero-fast --overwrite
 
+The instructions for pi-zero are identical, replacing pi-zero-fast by pi-zero should do the trick.
+
+Deploying these models is as simple as running this command, after you changed it to the correct directory and config name of course:
+CUDA_VISIBLE_DEVICES=0, uv run scripts/serve_policy.py policy:checkpoint --policy.config=pi0_ur3_attach_cb_v2_joints --policy.dir=checkpoints/pi0_ur3_attach_cb_v2_joints/pi-zero/9999
+
+## Robot-imitation-glue
+This submodule is used for demonstration collection on a physical robot as well as the evaluation of the policies.
