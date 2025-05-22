@@ -97,7 +97,7 @@ Used for physical robot data collection and evaluation.
 * For OpenVLA evaluation, modify `openvla_agent.py` to set your dataset name and desired instruction, then run `eval_openvla.py`.
 * For OpenPi, first launch the server, then run `eval_pi0.py`, setting the instruction inside the script.
 
-Use `zero_action_remover.ipynb` to filter out no-op actions from OpenVLA episodes.
+Use `zero_action_remover.ipynb` to filter out no-op actions for OpenVLA fine-tuning.
 
 ---
 
