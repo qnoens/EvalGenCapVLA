@@ -2,7 +2,7 @@
 
 This repository contains the full codebase for the thesis *“Evaluating the Generalisation Capabilities of Vision-Language-Action Models.”* It includes all scripts, tools, and configurations used in the experiments.
 
-Each submodule (subfolder) contains its own README with detailed usage instructions and setup guides—typically using either `conda` or `uv` environments. We recommend setting up a separate environment for each submodule, following their individual guides.
+Each submodule (subfolder) contains its own README with detailed usage instructions and setup guides, typically using either `conda` or `uv` environments. We recommend setting up a separate environment for each submodule, following their individual guides.
 
 This README provides an overview of what each submodule is for and how to reproduce the experiments described in the thesis.
 
