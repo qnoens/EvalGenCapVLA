@@ -54,3 +54,8 @@ This submodule is used for demonstration collection on a physical robot as well 
 
 For OpenVLA: In openvla_agent.py you must change the unnorm_key to the name of your own dataset and give the instruction you want the policy to execute. Then just run eval_openvla.py to run the policy (of course after you deployed OpenVLA in the openvla folder).
 For OpenPi: Run eval_pi0.py to run inference (after the server of the model was started), inside the code you must give the instruction that must be followed.
+
+The zero_action_remover.ipynb notebook was used to remove all the no-op actions from each episode in a given dataset, which was used to filter out the no-op actions for OpenVLA.
+
+## Help-scripts
+In this folder you can find all the help scripts used additionally to make the experiments possible. Right now, just one notebook is included: lerobot_dataset4pi0.ipynb which transforms the actions collected in collect_data.py (which are delta EEF actions constructed for OpenVLA) to joint angle actions which we used for both $\pi_0$ and $\pi_0$-FAST. The upload_dataset.py script brings a LeRobot dataset online on the Hugging Fase Hub. All the files in this folder can be run using the same conda environment as was created in the robot-imitation-glue.
