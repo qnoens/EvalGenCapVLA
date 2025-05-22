@@ -1,3 +1,6 @@
 [submodule "openpi"]
 	path = openpi
 	url = git@github.com:qnoens/openpi.git
+[submodule "rlds_dataset_builder"]
+	path = rlds_dataset_builder
+	url = git@github.com:qnoens/rlds_dataset_builder.git
