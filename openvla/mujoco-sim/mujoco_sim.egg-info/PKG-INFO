@@ -1,0 +1,14 @@
+Metadata-Version: 2.2
+Name: mujoco-sim
+Version: 0.0.1
+Author: Thomas Lips
+Author-email: thomas.lips@ugent.be
+Requires-Dist: dm_control
+Requires-Dist: numpy
+Requires-Dist: gymnasium
+Requires-Dist: spatialmath-python
+Requires-Dist: ur-analytic-ik
+Requires-Dist: robot_descriptions
+Dynamic: author
+Dynamic: author-email
+Dynamic: requires-dist
